@@ -1,0 +1,93 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: #f0f4f8; 
+}
+
+nav {
+  background-color: #202124;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+  padding: 15px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  transition: background-color 0.3s, padding 0.3s;
+}
+
+
+nav.scrolled {
+  background-color: #0d47a1; 
+  padding: 10px 15px;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  padding: 10px 15px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-menu a:hover {
+  background: #333;
+  border-radius: 5px;
+  color: #ffcc00;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 20px;
+  border-bottom: 1px solid #ccc;
+  background: #e3f2fd; 
+  color: #222;
+}
+
+section:nth-child(even) {
+  background: #bbdefb; 
+}
+
+.scrolled-message {
+  display: none;
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  background-color: #e9ac1e; 
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  font-weight: bold;
+  z-index: 1000;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrolled-message.show {
+  display: block;
+  animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
